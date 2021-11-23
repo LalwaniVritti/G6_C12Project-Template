@@ -2,14 +2,18 @@
 var back_img;
 
 var basket,basketImg;
-// create variable for all fruit images
+var fruit1_img, fruit2_img, fruit3_img, fruit4_img, fruit5_img;
 
 function preload(){
   back_img = loadImage("jungle.jpg");
-  // load basket and all fruit images
+  basketImg = loadImage("basket2.png");
+  fruit1 = loadImage("apple2.png");
+  fruit2 = loadImage("banana2.png");
+  fruit3 = loadImage("melon2.png");
+  fruit4 = loadImage("orange2.png");
+  fruit5 = loadImage("pineapple2.png");
 
 }
-
 
 function setup() {
   createCanvas(900, 500);
@@ -30,17 +34,21 @@ function draw() {
 
 function spawnFruits() {
 
-  if(frameCount % 70 == 0) {
-    
-    //assign randomm xposition to fruits
-    r=Math.round(random(50,850))
-    // create fruit sprite and assign a positive velocity
-    
-    var r = Math.round(random(1,5))
+ if(frameCount % 70 == 0) {
+   
+    var fruit = createSprite(r,-10,150,20);
+    fruit.velocityY = 4 ;
     switch(r){
       case 1 : fruit.addImage(fruit1);
       break;
-      //complete switch case for remaining fruits
+      case 2 : fruit.addImage(fruit2);
+      break;
+      case 3 : fruit.addImage(fruit3);
+      break;
+    
+        
+        
+      default: break;
     }    
   }
 }
